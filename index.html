@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLINIK GIGI PRAMBATAN - Pelayanan Kesehatan Gigi Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00b4d8;
+            --primary-dark: #0096c7;
+            --secondary: #f8f9fa;
+            --dark: #212529;
+            --light: #ffffff;
+            --accent: #ff9e00;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info a {
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text h1 {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            color: var(--gray);
+            font-size: 12px;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button.outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .cta-button.outline:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/ruangan.jpg') no-repeat center center/cover;
+            color: var(--light);
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 30px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background-color: var(--secondary);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-content h2 span {
+            color: var(--primary);
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 3px;
+        }
+
+        /* Staff Section */
+        .staff {
+            padding: 80px 20px;
+            background-color: var(--light);
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .staff-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .staff-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .staff-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .staff-card:hover .staff-image img {
+            transform: scale(1.05);
+        }
+
+        .staff-info {
+            padding: 20px;
+        }
+
+        .staff-info h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .staff-info p.position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .staff-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background-color: var(--secondary);
+        }
+
+        .testimonials-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 20px;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 30px;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .rating {
+            color: var(--accent);
+            margin-top: 5px;
+        }
+
+        /* Appointment Section */
+        .appointment {
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0, 180, 216, 0.9), rgba(0, 180, 216, 0.9)), url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: var(--light);
+            text-align: center;
+        }
+
+        .appointment-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .appointment h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .appointment p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .appointment-form {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: var(--light);
+            margin-bottom: 20px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col p {
+            color: #adb5bd;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #343a40;
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #343a40;
+            color: #adb5bd;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 100px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 100px);
+                background-color: var(--light);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 30px;
+                transition: left 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <a href="tel:+6282327240574"><i class="fas fa-phone"></i> 0823-2724-0574</a>
+                <a href="https://wa.me/6282327240574"><i class="fab fa-whatsapp"></i> WhatsApp Kami</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class=""></i></a>
+                <a href="#"><i class=""></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/50x50" alt="">
+                <div class="logo-text">
+                    <h1>KLINIK GIGI PRAMBATAN</h1>
+                    <p>Pelayanan Kesehatan Gigi Profesional</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">Beranda</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#staff">Staff</a></li>
+                <li><a href="#lokasi">Lokasi</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <a href="https://wa.me/6282327240574" class="cta-button">
+                <i class="fab fa-whatsapp"></i> Hubungi Kami
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Perawatan Gigi Berkualitas di Kudus</h1>
+            <p>KLINIK GIGI PRAMBATAN menyediakan berbagai layanan perawatan gigi dengan standar profesional untuk kesehatan mulut Anda.</p>
+            <div class="hero-buttons">
+                <a href="#appointment" class="cta-button">
+                    <i class="fas fa-calendar-check"></i> Buat Janji
+                </a>
+                <a href="https://wa.me/6282327240574" class="cta-button outline">
+                    <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="layanan">
+        <div class="section-title">
+            <h2>Layanan Kami</h2>
+            <p>Berbagai layanan perawatan gigi yang kami sediakan untuk kesehatan dan kenyamanan Anda</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h3>Cabut Gigi</h3>
+                <p>Proses pencabutan gigi dengan teknik modern dan minim rasa sakit oleh tenaga profesional.</p>
+                <a href="https://wa.me/6282327240574?text=Saya%20ingin%20konsultasi%20cabut%20gigi" class="cta-button outline">Konsultasi Sekarang</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-broom"></i>
+                </div>
+                <h3>Pembersihan Karang Gigi</h3>
+                <p>Scaling gigi untuk membersihkan karang dan plak yang menumpak, menjaga kesehatan gusi dan gigi.</p>
+                <a href="https://wa.me/6282327240574?text=Saya%20ingin%20konsultasi%20pembersihan%20karang%20gigi" class="cta-button outline">Konsultasi Sekarang</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-teeth-open"></i>
+                </div>
+                <h3>Pengobatan Sakit Gigi</h3>
+                <p>Penanganan profesional untuk berbagai masalah sakit gigi dengan diagnosis yang tepat.</p>
+                <a href="https://wa.me/6282327240574?text=Saya%20ingin%20konsultasi%20sakit%20gigi" class="cta-button outline">Konsultasi Sekarang</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-teeth"></i>
+                </div>
+                <h3>Tambal Gigi</h3>
+                <p>Perbaikan gigi berlubang dengan bahan berkualitas tinggi untuk hasil yang tahan lama.</p>
+                <a href="https://wa.me/6282327240574?text=Saya%20ingin%20konsultasi%20tambal%20gigi" class="cta-button outline">Konsultasi Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/izin.jpg" alt="KLINIK GIGI PRAMBATAN">
+            </div>
+            <div class="about-content">
+                <h2>Tentang <span>KLINIK GIGI PRAMBATAN</span></h2>
+                <p>KLINIK GIGI PRAMBATAN adalah klinik gigi profesional yang berlokasi di Kaliwungu, Kudus, Jawa Tengah. Kami berkomitmen untuk memberikan pelayanan kesehatan gigi yang berkualitas dengan peralatan modern dan tenaga medis yang berpengalaman.</p>
+                <p>Dengan fokus pada kenyamanan pasien dan hasil perawatan yang optimal, kami siap membantu Anda menjaga kesehatan gigi dan mulut seluruh keluarga.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Perawatan Profesional</h4>
+                            <p>Dilakukan oleh tenaga medis gigi yang kompeten dan berpengalaman</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Hygiene Terjamin</h4>
+                            <p>Standar sterilisasi tinggi untuk keamanan dan kenyamanan pasien</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Harga Terjangkau</h4>
+                            <p>Pelayanan berkualitas dengan harga yang bersahabat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section class="staff" id="staff">
+        <div class="section-title">
+            <h2>Perawat Gigi</h2>
+            <p>Tenaga medis profesional yang siap melayani kebutuhan perawatan gigi Anda</p>
+        </div>
+        <div class="staff-grid">
+            <div class="staff-card">
+                <div class="staff-image">
+                    <img src="images/nk.jpg" alt="Nur Khoridah">
+                </div>
+                <div class="staff-info">
+                    <h3>Nur Khoridah, A.Md.KG</h3>
+                    <p class="position">Perawat Gigi Profesional</p>
+                    <p>Berkelimpahan pengalaman dalam berbagai perawatan gigi dasar dan pencegahan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="gallery" style="padding: 80px 20px; background-color: #fff;">
+    <div class="section-title">
+        <h2>Hasil Perawatan</h2>
+        <p>Beberapa hasil perawatan gigi pada pasien kami</p>
+    </div>
+    
+    <div class="gallery-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px;">
+        <!-- Contoh 1 -->
+        <div class="gallery-item" style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div style="display: flex;">
+                <div style="width: 50%; padding: 10px;">
+                    <h4 style="text-align: center; color: var(--primary); margin-bottom: 10px;"></h4>
+                    <img src="images/gigi.jpg" alt="Hasil perawatan gigi pasien 1" style="width: 100%; border-radius: 5px;">
+                </div>
+                <div style="width: 50%; padding: 10px;">
+                    <h4 style="text-align: center; color: var(--primary); margin-bottom: 10px;"></h4>
+                    <img src="images/gigi2.jpg" alt="Hasil perawatan gigi pasien 1 -" style="width: 100%; border-radius: 5px;">
+                </div>
+            </div>
+            <p style="padding: 15px; font-size: 14px; text-align: center; color: #555;">
+                <strong></strong> <br>
+                <em></em> 
+            </p>
+        </div>
+       <!-- Contoh 1 -->
+        <div class="gallery-item" style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div style="display: flex;">
+                <div style="width: 50%; padding: 10px;">
+                    <h4 style="text-align: center; color: var(--primary); margin-bottom: 10px;"></h4>
+                    <img src="images/gigi4.jpg" alt="Hasil perawatan gigi pasien 1" style="width: 100%; border-radius: 5px;">
+                </div>
+                <div style="width: 50%; padding: 10px;">
+                    <h4 style="text-align: center; color: var(--primary); margin-bottom: 10px;"></h4>
+                    <img src="images/gigi5.jpg" alt="Hasil perawatan gigi pasien 1 -" style="width: 100%; border-radius: 5px;">
+                </div>
+            </div>
+            <p style="padding: 15px; font-size: 14px; text-align: center; color: #555;">
+                <strong></strong> <br>
+                <em></em> 
+            </p>
+        </div>
+        <!-- Contoh 1 -->
+        <div class="gallery-item" style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div style="display: flex;">
+                <div style="width: 50%; padding: 10px;">
+                    <h4 style="text-align: center; color: var(--primary); margin-bottom: 10px;"></h4>
+                    <img src="images/gigi6.jpg" alt="Hasil perawatan gigi pasien 1" style="width: 100%; border-radius: 5px;">
+                </div>
+                <div style="width: 50%; padding: 10px;">
+                    <h4 style="text-align: center; color: var(--primary); margin-bottom: 10px;"></h4>
+                    <img src="images/gigi7.jpg" alt="Hasil perawatan gigi pasien 1 -" style="width: 100%; border-radius: 5px;">
+                </div>
+            </div>
+            <p style="padding: 15px; font-size: 14px; text-align: center; color: #555;">
+                <strong></strong> <br>
+                <em></em> 
+            </p>
+        </div>
+       
+
+ 
+
+        
+
+    <p style="text-align: center; margin-top: 30px; font-size: 12px; color: #777;">
+        *Foto digunakan dengan izin pasien dan telah melalui proses anonimisasi
+    </p>
+</section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>Apa Kata Pasien Kami</h2>
+            <p>Testimoni dari pasien yang telah merasakan pelayanan kami</p>
+        </div>
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Klinik gigi yang sangat nyaman sekali tempatnya.. pelayananya juga ramah. Sudah beberapa kali langganan scalling gigi disini. Sukses selalu mbak Ridah🤗 semoga semakin maju🥰
+
+
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="images/umi.jpg" alt="Umi Anisyah">
+                    </div>
+                    <div class="author-info">
+                        <h4>Umi Anisyah</h4>
+                        <p>Scaling Gigi</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Terima kasih dokter, alhamdulillah karang gigi saya teratasi dan bisa hilang. Biayanya pun sangat terjangkau di kota Kudus
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="images/put.jpg" alt="Putri Meidasari">
+                    </div>
+                    <div class="author-info">
+                        <h4>Putri Meidasari</h4>
+                        <p>Scaling Gigi</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Terima kasih dokter, alhamdulillah karang gigi saya teratasi dan bisa hilang. Biayanya pun sangat terjangkau di kota Kudus
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="images/wil.jpg" alt="Whie Channel">
+                    </div>
+                    <div class="author-info">
+                        <h4>Whie Channel</h4>
+                        <p>Perawatan Gigi</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment" id="appointment">
+        <div class="appointment-container">
+            <h2>Buat Janji Temu</h2>
+            <p>Jadwalkan kunjungan Anda dengan mudah melalui form online kami. Tim kami akan segera menghubungi Anda untuk konfirmasi.</p>
+            
+            <div class="appointment-form">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon/WhatsApp</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Masukkan nomor telepon" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Tanggal Janji</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Waktu Janji</label>
+                            <select id="time" class="form-control" required>
+                                <option value="">Pilih waktu</option>
+                                <option value="08:00">08:00 - 09:00</option>
+                                <option value="09:00">09:00 - 10:00</option>
+                                <option value="10:00">10:00 - 11:00</option>
+                                <option value="13:00">13:00 - 14:00</option>
+                                <option value="14:00">14:00 - 15:00</option>
+                                <option value="15:00">15:00 - 16:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Layanan yang Dibutuhkan</label>
+                        <select id="service" class="form-control" required>
+                            <option value="">Pilih layanan</option>
+                            <option value="cabut">Cabut Gigi</option>
+                            <option value="scaling">Pembersihan Karang Gigi</option>
+                            <option value="obat">Pengobatan Sakit Gigi</option>
+                            <option value="tambal">Tambal Gigi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Keluhan/Pesan Tambahan</label>
+                        <textarea id="message" class="form-control" rows="3" placeholder="Tulis keluhan atau pesan tambahan"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Kirim Permohonan Janji
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="services" id="lokasi">
+        <div class="section-title">
+            <h2>Lokasi Kami</h2>
+            <p>Kunjungi klinik kami untuk mendapatkan pelayanan terbaik</p>
+        </div>
+        <div style="max-width: 600px; margin: 0 auto; padding: 0 20px;">
+            <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px;">
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Alamat Lengkap</h3>
+                <p style="margin-bottom: 15px;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> 
+                    RT.1/RW.2, Krajan, Prambatan Kidul, Kec. Kaliwungu, Kabupaten Kudus, Jawa Tengah 59331
+                </p>
+                <div style="height: 450px; background: var(--light-gray); display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 15px;">
+                    <p style="color: var(--gray);"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7713204337797!2d110.81938917475588!3d-6.797653393199677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70c5e324ccff85%3A0xffe2afe5327d4efa!2sKLINIK%20GIGI%20PRAMBATAN%20(TAMBAL%20GIGI%2C%20KARANG%20GIGI%2C%20CABUT%20GIGI)!5e0!3m2!1sen!2sid!4v1754941752718!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                </div>
+                <a href="https://maps.app.goo.gl/ESDpDxNcJw4m3SGF8" class="cta-button" style="display: inline-flex;">
+                    <i class="fas fa-map-marked-alt"></i> Buka di Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>KLINIK GIGI PRAMBATAN</h3>
+                <p>Pelayanan kesehatan gigi profesional dengan peralatan modern dan tenaga medis berpengalaman di Kudus, Jawa Tengah.</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/6282327240574"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Cabut Gigi</a></li>
+                    <li><a href="#">Pembersihan Karang Gigi</a></li>
+                    <li><a href="#">Pengobatan Sakit Gigi</a></li>
+                    <li><a href="#">Tambal Gigi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#staff">perawat gigi</a></li>
+                    <li><a href="#lokasi">Lokasi</a></li>
+                    <li><a href="#appointment">Buat Janji</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Kontak Kami</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> RT.1/RW.2, Krajan, Prambatan Kidul, Kec. Kaliwungu, Kabupaten Kudus, Jawa Tengah 59331</p>
+                    <p><i class="fas fa-phone"></i> 0823-2724-0574</p>
+                    <p><i class="fas fa-envelope"></i> klinikgigiprambatan@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Senin-Sabtu: 08:00 - 16:00 WIB</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 KLINIK GIGI PRAMBATAN. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Simple testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+        
+        // Initialize
+        showTestimonial(0);
+        
+        // Auto rotate testimonials every 5 seconds
+        setInterval(nextTestimonial, 5000);
+
+        // Form submission
+        const appointmentForm = document.querySelector('.appointment-form form');
+        if(appointmentForm) {
+            appointmentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                
+                // Create WhatsApp message
+                const whatsappMessage = `Halo, saya ingin membuat janji untuk perawatan gigi dengan detail berikut:
+                
+Nama: ${name}
+No. HP: ${phone}
+Tanggal: ${date}
+Waktu: ${time}
+Layanan: ${service}
+Keluhan: ${message || '-'}
+
+Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
+                
+                // Encode for WhatsApp URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // Open WhatsApp
+                window.open(`https://wa.me/6282327240574?text=${encodedMessage}`, '_blank');
+                
+                // Reset form
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
